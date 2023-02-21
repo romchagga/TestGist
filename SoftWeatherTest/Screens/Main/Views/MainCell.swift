@@ -41,14 +41,12 @@ final class MainCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupViews()
-        setupConstraints()
+        setConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupViews()
-        setupConstraints()
+        setConstraints()
     }
     
     // MARK: - Methods
@@ -59,13 +57,11 @@ final class MainCell: UITableViewCell {
         avatarImage.image = cellModel.avatarURL
     }
     
-    private func setupViews() {
+    private func setConstraints() {
         contentView.addSubview(nameGistLabel)
         contentView.addSubview(userNameLabel)
         contentView.addSubview(avatarImage)
-    }
-    
-    private func setupConstraints() {
+        
         
         NSLayoutConstraint.activate([
             nameGistLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 8.0),

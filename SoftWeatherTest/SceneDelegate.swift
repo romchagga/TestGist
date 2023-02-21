@@ -15,8 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let navigation = UINavigationController(rootViewController: MainViewController())
-        navigation.navigationBar.barTintColor = UIColor.gray
+        let navigation = UINavigationController(rootViewController: StartNameViewController())
+        navigation.navigationBar.barTintColor = .white
         navigation.navigationBar.isTranslucent = false
         navigation.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]

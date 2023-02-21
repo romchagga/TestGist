@@ -28,6 +28,8 @@
 		FA475F9529A4D7D600D53719 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F9429A4D7D600D53719 /* DetailViewModel.swift */; };
 		FA475F9729A4D7EF00D53719 /* DetailGistCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F9629A4D7EF00D53719 /* DetailGistCellModel.swift */; };
 		FA475F9929A4D8BB00D53719 /* DetailsGistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA475F9829A4D8BB00D53719 /* DetailsGistViewController.xib */; };
+		FAD7C4ED29A4E61E0010A533 /* StartNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD7C4EC29A4E61E0010A533 /* StartNameViewController.swift */; };
+		FAD7C4F129A4EC150010A533 /* PrivateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD7C4F029A4EC150010A533 /* PrivateViewController.swift */; };
 		FAF621B629A4DD640060EC65 /* FileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF621B429A4DD640060EC65 /* FileDetailsViewController.swift */; };
 		FAF621BA29A4DD7B0060EC65 /* CommitsFileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF621B829A4DD7B0060EC65 /* CommitsFileCell.swift */; };
 		FAF621BB29A4DD7B0060EC65 /* CommitsFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF621B929A4DD7B0060EC65 /* CommitsFileCell.xib */; };
@@ -58,6 +60,8 @@
 		FA475F9429A4D7D600D53719 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		FA475F9629A4D7EF00D53719 /* DetailGistCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailGistCellModel.swift; sourceTree = "<group>"; };
 		FA475F9829A4D8BB00D53719 /* DetailsGistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsGistViewController.xib; sourceTree = "<group>"; };
+		FAD7C4EC29A4E61E0010A533 /* StartNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNameViewController.swift; sourceTree = "<group>"; };
+		FAD7C4F029A4EC150010A533 /* PrivateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateViewController.swift; sourceTree = "<group>"; };
 		FAF621B429A4DD640060EC65 /* FileDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDetailsViewController.swift; sourceTree = "<group>"; };
 		FAF621B829A4DD7B0060EC65 /* CommitsFileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitsFileCell.swift; sourceTree = "<group>"; };
 		FAF621B929A4DD7B0060EC65 /* CommitsFileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommitsFileCell.xib; sourceTree = "<group>"; };
@@ -110,7 +114,9 @@
 		FA475F6A29A4CC0A00D53719 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FAD7C4EB29A4E5810010A533 /* StartName */,
 				FA475F6B29A4CC1200D53719 /* Main */,
+				FAD7C4EF29A4EBDF0010A533 /* Private */,
 				FA475F8429A4D52100D53719 /* Detail */,
 				FAF621B229A4DD450060EC65 /* DetailFile */,
 			);
@@ -199,6 +205,22 @@
 				FA475F9029A4D7B100D53719 /* DetailViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FAD7C4EB29A4E5810010A533 /* StartName */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7C4EC29A4E61E0010A533 /* StartNameViewController.swift */,
+			);
+			path = StartName;
+			sourceTree = "<group>";
+		};
+		FAD7C4EF29A4EBDF0010A533 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7C4F029A4EC150010A533 /* PrivateViewController.swift */,
+			);
+			path = Private;
 			sourceTree = "<group>";
 		};
 		FAF621B229A4DD450060EC65 /* DetailFile */ = {
@@ -304,6 +326,7 @@
 				FA475F7929A4D2BA00D53719 /* PhotoService.swift in Sources */,
 				FA475F5529A4C9A500D53719 /* AppDelegate.swift in Sources */,
 				FA475F7B29A4D2D400D53719 /* DateFormatter.swift in Sources */,
+				FAD7C4ED29A4E61E0010A533 /* StartNameViewController.swift in Sources */,
 				FA475F7029A4CDB400D53719 /* MainCell.swift in Sources */,
 				FA475F5729A4C9A500D53719 /* SceneDelegate.swift in Sources */,
 				FAF621B629A4DD640060EC65 /* FileDetailsViewController.swift in Sources */,
@@ -311,6 +334,7 @@
 				FA475F9729A4D7EF00D53719 /* DetailGistCellModel.swift in Sources */,
 				FA475F9329A4D7B200D53719 /* DetailViewCell.swift in Sources */,
 				FA475F6929A4CC0400D53719 /* MainViewModel.swift in Sources */,
+				FAD7C4F129A4EC150010A533 /* PrivateViewController.swift in Sources */,
 				FA475F7729A4D29500D53719 /* NetworkSevice.swift in Sources */,
 				FA475F9529A4D7D600D53719 /* DetailViewModel.swift in Sources */,
 			);
