@@ -27,6 +27,14 @@ final class PublicListCell: UITableViewCell {
         return label
     }()
     
+    private(set) lazy var gistDescription: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .lightGray
+        label.font = UIFont.systemFont(ofSize: 9.0)
+        return label
+    }()
+    
     private(set) lazy var avatarImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -55,12 +63,14 @@ final class PublicListCell: UITableViewCell {
         nameGistLabel.text = cellModel.fileName
         userNameLabel.text = cellModel.userName
         avatarImage.image = cellModel.avatarURL
+        gistDescription.text = cellModel.description
     }
     
     private func setConstraints() {
         contentView.addSubview(nameGistLabel)
         contentView.addSubview(userNameLabel)
         contentView.addSubview(avatarImage)
+        contentView.addSubview(gistDescription)
         
         
         NSLayoutConstraint.activate([
@@ -73,6 +83,12 @@ final class PublicListCell: UITableViewCell {
             userNameLabel.topAnchor.constraint(equalTo: nameGistLabel.bottomAnchor, constant: 4.0),
             userNameLabel.leftAnchor.constraint(equalTo: avatarImage.rightAnchor, constant: 10.0),
             userNameLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -40.0)
+        ])
+        
+        NSLayoutConstraint.activate([
+            gistDescription.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 4.0),
+            gistDescription.leftAnchor.constraint(equalTo: avatarImage.rightAnchor, constant: 10.0),
+            gistDescription.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -40.0)
         ])
         
         NSLayoutConstraint.activate([

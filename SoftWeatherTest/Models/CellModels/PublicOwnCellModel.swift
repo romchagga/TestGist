@@ -14,4 +14,5 @@ struct PublicOwnCellModel {
     let avatarURL: UIImage
     let createdAt: String
     let fileName: String
+    let description: String
 }

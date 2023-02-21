@@ -86,15 +86,13 @@ final class PublicListViewModel {
     
     private func viewModels() -> [PublicOwnCellModel] {
             return self.gists.compactMap { gist -> PublicOwnCellModel in
-//                guard let image = photoService.photo(byUrl: gist.owner.avatarUrl)
-//                else {
-//                    return MainCellModel(url: "", userName: "", avatarURL: UIImage(systemName: "person")!, createdAt: "", fileName: "")
-//                }
+
                 return PublicOwnCellModel(url: gist.url,
                                      userName: gist.owner.login,
                                      avatarURL: photoService.photo(byUrl: gist.owner.avatarUrl) ?? UIImage(),
                                      createdAt: gist.createdAt,
-                                     fileName: gist.files.values.first?.filename ?? "")
+                                          fileName: gist.files.values.first?.filename ?? "",
+                                          description: gist.description)
             }
     }
     

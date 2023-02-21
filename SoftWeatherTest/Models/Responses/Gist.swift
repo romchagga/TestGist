@@ -11,6 +11,7 @@ struct Gist {
     let url: String
     let owner: OwnerGist
     let id: String
+    let description: String
     let createdAt: String
     let files: [String : FileGist]
 }
@@ -22,6 +23,7 @@ extension Gist: Codable {
         case id
         case createdAt = "created_at"
         case files
+        case description
     }
 }
 

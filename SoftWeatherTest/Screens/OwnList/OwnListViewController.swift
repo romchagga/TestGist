@@ -34,7 +34,6 @@ class OwnListViewController: UIViewController {
     
     private func setupViews() {
         setupTableView()
-        // setupRefreshControl()
     }
     
     private func setupTableView() {
@@ -52,21 +51,6 @@ class OwnListViewController: UIViewController {
             }
         }
     }
-    
-    //    private func setupRefreshControl() {
-    //        self.ownListView.tableView.refreshControl = UIRefreshControl()
-    //        self.ownListView.tableView.refreshControl?.attributedTitle = NSAttributedString(string: "Обновление...")
-    //        self.ownListView.tableView.refreshControl?.tintColor = .gray
-    //        self.ownListView.tableView.refreshControl?.addTarget(self, action: #selector(refreshGists), for: .valueChanged)
-    //    }
-    //
-    //    @objc func refreshGists() {
-    //        self.viewModel.getGistForRefreshController()
-    //        DispatchQueue.main.async {
-    //            self.ownListView.tableView.refreshControl?.endRefreshing()
-    //        }
-    //    }
-    //}
 }
 extension OwnListViewController: UITableViewDataSource, UITableViewDelegate {
     

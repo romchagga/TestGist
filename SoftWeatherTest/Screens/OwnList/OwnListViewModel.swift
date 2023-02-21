@@ -54,7 +54,8 @@ final class OwnListViewModel {
                                      userName: gist.owner.login,
                                      avatarURL: photoService.photo(byUrl: gist.owner.avatarUrl) ?? UIImage(),
                                      createdAt: gist.createdAt,
-                                     fileName: gist.files.values.first?.filename ?? "")
+                                          fileName: gist.files.values.first?.filename ?? "",
+                                          description: gist.description)
             }
     }
     

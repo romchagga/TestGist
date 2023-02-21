@@ -122,7 +122,7 @@
 			children = (
 				FAD7C4EB29A4E5810010A533 /* StartName */,
 				FA475F6B29A4CC1200D53719 /* PublicList */,
-				FAD7C4EF29A4EBDF0010A533 /* Private */,
+				FAD7C4EF29A4EBDF0010A533 /* OwnList */,
 				FA475F8429A4D52100D53719 /* Detail */,
 				FAF621B229A4DD450060EC65 /* DetailFile */,
 			);
@@ -230,14 +230,14 @@
 			path = StartName;
 			sourceTree = "<group>";
 		};
-		FAD7C4EF29A4EBDF0010A533 /* Private */ = {
+		FAD7C4EF29A4EBDF0010A533 /* OwnList */ = {
 			isa = PBXGroup;
 			children = (
 				FAD7C4F029A4EC150010A533 /* OwnListViewController.swift */,
 				FABD810929A4F57E003D0ACB /* OwnListViewModel.swift */,
 				FABD810B29A4F601003D0ACB /* Views */,
 			);
-			path = Private;
+			path = OwnList;
 			sourceTree = "<group>";
 		};
 		FAF621B229A4DD450060EC65 /* DetailFile */ = {
