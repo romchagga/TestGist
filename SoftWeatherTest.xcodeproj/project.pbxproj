@@ -16,6 +16,12 @@
 		FA475F6E29A4CC6600D53719 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F6D29A4CC6600D53719 /* MainView.swift */; };
 		FA475F7029A4CDB400D53719 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F6F29A4CDB400D53719 /* MainCell.swift */; };
 		FA475F7429A4CE8F00D53719 /* MainCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F7329A4CE8F00D53719 /* MainCellModel.swift */; };
+		FA475F7729A4D29500D53719 /* NetworkSevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F7629A4D29500D53719 /* NetworkSevice.swift */; };
+		FA475F7929A4D2BA00D53719 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F7829A4D2BA00D53719 /* PhotoService.swift */; };
+		FA475F7B29A4D2D400D53719 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F7A29A4D2D400D53719 /* DateFormatter.swift */; };
+		FA475F7E29A4D2E800D53719 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F7D29A4D2E800D53719 /* Gist.swift */; };
+		FA475F8029A4D33400D53719 /* GistCommits.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F7F29A4D33400D53719 /* GistCommits.swift */; };
+		FA475F8329A4D40400D53719 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F8229A4D40400D53719 /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		FA475F6D29A4CC6600D53719 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FA475F6F29A4CDB400D53719 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		FA475F7329A4CE8F00D53719 /* MainCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellModel.swift; sourceTree = "<group>"; };
+		FA475F7629A4D29500D53719 /* NetworkSevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSevice.swift; sourceTree = "<group>"; };
+		FA475F7829A4D2BA00D53719 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
+		FA475F7A29A4D2D400D53719 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		FA475F7D29A4D2E800D53719 /* Gist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
+		FA475F7F29A4D33400D53719 /* GistCommits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistCommits.swift; sourceTree = "<group>"; };
+		FA475F8229A4D40400D53719 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +78,8 @@
 				FA475F5629A4C9A500D53719 /* SceneDelegate.swift */,
 				FA475F6A29A4CC0A00D53719 /* Screens */,
 				FA475F7129A4CE1C00D53719 /* Models */,
+				FA475F7529A4D27B00D53719 /* Service */,
+				FA475F8129A4D3F200D53719 /* Helpers */,
 				FA475F5D29A4C9A700D53719 /* Assets.xcassets */,
 				FA475F5F29A4C9A700D53719 /* LaunchScreen.storyboard */,
 				FA475F6229A4C9A700D53719 /* Info.plist */,
@@ -103,6 +117,7 @@
 		FA475F7129A4CE1C00D53719 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA475F7C29A4D2E000D53719 /* Responses */,
 				FA475F7229A4CE7F00D53719 /* CellModels */,
 			);
 			path = Models;
@@ -114,6 +129,33 @@
 				FA475F7329A4CE8F00D53719 /* MainCellModel.swift */,
 			);
 			path = CellModels;
+			sourceTree = "<group>";
+		};
+		FA475F7529A4D27B00D53719 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FA475F7629A4D29500D53719 /* NetworkSevice.swift */,
+				FA475F7829A4D2BA00D53719 /* PhotoService.swift */,
+				FA475F7A29A4D2D400D53719 /* DateFormatter.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FA475F7C29A4D2E000D53719 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				FA475F7D29A4D2E800D53719 /* Gist.swift */,
+				FA475F7F29A4D33400D53719 /* GistCommits.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		FA475F8129A4D3F200D53719 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FA475F8229A4D40400D53719 /* Observable.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,13 +228,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA475F8329A4D40400D53719 /* Observable.swift in Sources */,
 				FA475F7429A4CE8F00D53719 /* MainCellModel.swift in Sources */,
 				FA475F5929A4C9A500D53719 /* MainViewController.swift in Sources */,
+				FA475F7E29A4D2E800D53719 /* Gist.swift in Sources */,
+				FA475F8029A4D33400D53719 /* GistCommits.swift in Sources */,
+				FA475F7929A4D2BA00D53719 /* PhotoService.swift in Sources */,
 				FA475F5529A4C9A500D53719 /* AppDelegate.swift in Sources */,
+				FA475F7B29A4D2D400D53719 /* DateFormatter.swift in Sources */,
 				FA475F7029A4CDB400D53719 /* MainCell.swift in Sources */,
 				FA475F5729A4C9A500D53719 /* SceneDelegate.swift in Sources */,
 				FA475F6E29A4CC6600D53719 /* MainView.swift in Sources */,
 				FA475F6929A4CC0400D53719 /* MainViewModel.swift in Sources */,
+				FA475F7729A4D29500D53719 /* NetworkSevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
