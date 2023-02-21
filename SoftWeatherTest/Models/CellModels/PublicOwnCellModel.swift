@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct MainCellModel {
+struct PublicOwnCellModel {
     let url: String
     let userName: String
     let avatarURL: UIImage

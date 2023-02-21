@@ -33,6 +33,32 @@ final class NetworkService {
         guard
             let url = urlConstructor.url
         else { return }
+        print(url)
+        let task = mySession.dataTask(with: url) { data, response, error in
+            if let response = response as? HTTPURLResponse {
+                print(response.statusCode)
+            }
+            guard
+                error == nil,
+                let data = data
+            else { return }
+            do {
+                guard let gistResponse = try? JSONDecoder().decode([Gist].self, from: data)
+                else {
+                    return
+                }
+                completion(.success(gistResponse))
+            }
+        }
+        task.resume()
+    }
+    
+    func getGistsByUser(user: String, completion: @escaping (Result<[Gist],Error>) -> Void) {
+        urlConstructor.path = "/users/\(user)/gists"
+        guard
+            let url = urlConstructor.url
+        else { return }
+        print(url)
         let task = mySession.dataTask(with: url) { data, response, error in
             if let response = response as? HTTPURLResponse {
                 print(response.statusCode)

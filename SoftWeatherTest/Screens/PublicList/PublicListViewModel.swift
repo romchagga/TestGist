@@ -7,10 +7,9 @@
 import Foundation
 import UIKit
 
-final class MainViewModel {
+final class PublicListViewModel {
     
-    
-    let cellModel = Observable<[MainCellModel]>([])
+    let cellModel = Observable<[PublicOwnCellModel]>([])
     
     weak var viewController: UIViewController?
     
@@ -76,7 +75,7 @@ final class MainViewModel {
         }
     }
     
-    func didSelectGist(_ gistViewModel: MainCellModel) {
+    func didSelectGist(_ gistViewModel: PublicOwnCellModel) {
         guard let gist = self.gist(with: gistViewModel) else { return }
         let detailGistViewController = DetailsGistViewController()
         let detailViewModel = DetailViewModel(gist: gist, viewController: detailGistViewController)
@@ -85,13 +84,13 @@ final class MainViewModel {
         self.viewController?.navigationController?.pushViewController(detailGistViewController, animated: true)
     }
     
-    private func viewModels() -> [MainCellModel] {
-            return self.gists.compactMap { gist -> MainCellModel in
+    private func viewModels() -> [PublicOwnCellModel] {
+            return self.gists.compactMap { gist -> PublicOwnCellModel in
 //                guard let image = photoService.photo(byUrl: gist.owner.avatarUrl)
 //                else {
 //                    return MainCellModel(url: "", userName: "", avatarURL: UIImage(systemName: "person")!, createdAt: "", fileName: "")
 //                }
-                return MainCellModel(url: gist.url,
+                return PublicOwnCellModel(url: gist.url,
                                      userName: gist.owner.login,
                                      avatarURL: photoService.photo(byUrl: gist.owner.avatarUrl) ?? UIImage(),
                                      createdAt: gist.createdAt,
@@ -99,7 +98,7 @@ final class MainViewModel {
             }
     }
     
-    private func gist(with viewModel: MainCellModel) -> Gist? {
+    private func gist(with viewModel: PublicOwnCellModel) -> Gist? {
         return self.gists.first { viewModel.url == $0.url }
     }
 }

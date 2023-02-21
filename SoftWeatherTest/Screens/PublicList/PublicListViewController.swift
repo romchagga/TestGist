@@ -7,19 +7,19 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class PublicListViewController: UIViewController {
     
-    private let viewModel = MainViewModel()
+    private let viewModel = PublicListViewModel()
     
     private var isLoading: Bool = false 
     
-    private var mainView: MainView {
-        return view as! MainView
+    private var mainView: PublicListView {
+        return view as! PublicListView
     }
     
     override func loadView() {
         super.loadView()
-        self.view = MainView()
+        self.view = PublicListView()
         self.viewModel.viewController = self
     }
     
@@ -42,7 +42,7 @@ class MainViewController: UIViewController {
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         mainView.tableView.prefetchDataSource = self
-        mainView.tableView.register(MainCell.self, forCellReuseIdentifier: "reuseId")
+        mainView.tableView.register(PublicListCell.self, forCellReuseIdentifier: "reuseId")
     }
     
     private func bindViewModel() {
@@ -68,7 +68,7 @@ class MainViewController: UIViewController {
     }
 }
 
-extension MainViewController: UITableViewDataSource, UITableViewDelegate {
+extension PublicListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.cellModel.value.count
@@ -80,7 +80,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         
         let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: "reuseId", for: indexPath)
         
-        guard let cell = dequeuedCell as? MainCell else {
+        guard let cell = dequeuedCell as? PublicListCell else {
             return dequeuedCell
         }
         
@@ -94,7 +94,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension MainViewController: UITableViewDataSourcePrefetching {
+extension PublicListViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         guard let maxRow = indexPaths.map({ $0.row }).max() else { return }
         

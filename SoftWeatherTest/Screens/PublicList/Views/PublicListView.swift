@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class MainView: UIView {
+final class PublicListView: UIView {
     
     private(set) lazy var tableView: UITableView = {
         var tableView = UITableView()

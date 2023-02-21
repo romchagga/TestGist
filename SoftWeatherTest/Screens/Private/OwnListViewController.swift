@@ -1,0 +1,107 @@
+//
+//  ViewController.swift
+//  SoftWeatherTest
+//
+//  Created by macbook on 21.02.2023.
+//
+
+import UIKit
+
+class OwnListViewController: UIViewController {
+    
+    private let viewModel = OwnListViewModel()
+    
+    private var isLoading: Bool = false
+    
+    private var ownListView: OwnListView {
+        return view as! OwnListView
+    }
+    
+    override func loadView() {
+        super.loadView()
+        self.view = OwnListView()
+        self.viewModel.viewController = self
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupViews()
+        bindViewModel()
+        
+        viewModel.getGistsByUser()
+    }
+    
+    private func setupViews() {
+        setupTableView()
+        // setupRefreshControl()
+    }
+    
+    private func setupTableView() {
+        self.navigationItem.title = "GitHub Gists"
+        ownListView.tableView.delegate = self
+        ownListView.tableView.dataSource = self
+        ownListView.tableView.prefetchDataSource = self
+        ownListView.tableView.register(OwnListCell.self, forCellReuseIdentifier: "ownReuseId")
+    }
+    
+    private func bindViewModel() {
+        self.viewModel.cellModel.addObserver(self) { [weak self]  (gistJSON, _) in
+            DispatchQueue.main.async {
+                self?.ownListView.tableView.reloadData()
+            }
+        }
+    }
+    
+    //    private func setupRefreshControl() {
+    //        self.ownListView.tableView.refreshControl = UIRefreshControl()
+    //        self.ownListView.tableView.refreshControl?.attributedTitle = NSAttributedString(string: "Обновление...")
+    //        self.ownListView.tableView.refreshControl?.tintColor = .gray
+    //        self.ownListView.tableView.refreshControl?.addTarget(self, action: #selector(refreshGists), for: .valueChanged)
+    //    }
+    //
+    //    @objc func refreshGists() {
+    //        self.viewModel.getGistForRefreshController()
+    //        DispatchQueue.main.async {
+    //            self.ownListView.tableView.refreshControl?.endRefreshing()
+    //        }
+    //    }
+    //}
+}
+extension OwnListViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.cellModel.value.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
+        let currentGist = viewModel.cellModel.value[indexPath.row]
+        
+        let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: "ownReuseId", for: indexPath)
+        
+        guard let cell = dequeuedCell as? OwnListCell else {
+            return dequeuedCell
+        }
+        
+        cell.configure(with: currentGist)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentGist = viewModel.cellModel.value[indexPath.row]
+        viewModel.didSelectGist(currentGist)
+    }
+}
+
+extension OwnListViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        guard let maxRow = indexPaths.map({ $0.row }).max() else { return }
+        
+        if maxRow > viewModel.cellModel.value.count - 2, !isLoading {
+            isLoading = true
+            viewModel.getGistForPrefetching()
+        }
+        isLoading = false
+    }
+}

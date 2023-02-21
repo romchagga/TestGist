@@ -18,6 +18,7 @@ class StartNameViewController: UIViewController {
         textfield.leftView = paddingView
         textfield.leftViewMode = UITextField.ViewMode.always
         textfield.autocapitalizationType = .none
+        textfield.autocorrectionType = .no
         return textfield
     }()
     
@@ -39,11 +40,15 @@ class StartNameViewController: UIViewController {
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        textFieldName.text = ""
+    }
+    
     @objc func buttonTapped() {
         let tabBar = UITabBarController()
         tabBar.viewControllers = [
-        createTabBar(vc: MainViewController(), title: "Public", image: "list.dash"),
-        createTabBar(vc: PrivateViewController(), title: "Own", image: "square.and.arrow.up")
+        createTabBar(vc: PublicListViewController(), title: "Public", image: "list.dash"),
+        createTabBar(vc: OwnListViewController(), title: "Own", image: "person.fill.turn.down")
         
         ]
         navigationController?.pushViewController(tabBar, animated: true)

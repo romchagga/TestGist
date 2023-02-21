@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MainCell: UITableViewCell {
+final class PublicListCell: UITableViewCell {
     
     static let reuseIdentifier = "reuseId"
     
@@ -51,7 +51,7 @@ final class MainCell: UITableViewCell {
     
     // MARK: - Methods
     
-    func configure(with cellModel: MainCellModel) {
+    func configure(with cellModel: PublicOwnCellModel) {
         nameGistLabel.text = cellModel.fileName
         userNameLabel.text = cellModel.userName
         avatarImage.image = cellModel.avatarURL
