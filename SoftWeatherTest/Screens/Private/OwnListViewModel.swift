@@ -48,31 +48,8 @@ final class OwnListViewModel {
         self.viewController?.navigationController?.pushViewController(detailGistViewController, animated: true)
     }
     
-    func getGistForPrefetching() {
-        page += 1
-        networkService.getGistsWithTime(page: page) { [weak self] gistsJSON in
-            guard let self = self else { return }
-            gistsJSON.forEach { gistJSON in
-                if self.gists.contains(where: { $0.id == gistJSON.id }) {
-                    print(true)
-                } else {
-                    print(gistJSON)
-                    self.gists.append(gistJSON)
-                    DispatchQueue.main.async {
-                        self.cellModel.value = self.viewModels()
-                    }
-                    
-                }
-            }
-        }
-    }
-    
     private func viewModels() -> [PublicOwnCellModel] {
             return self.gists.compactMap { gist -> PublicOwnCellModel in
-//                guard let image = photoService.photo(byUrl: gist.owner.avatarUrl)
-//                else {
-//                    return MainCellModel(url: "", userName: "", avatarURL: UIImage(systemName: "person")!, createdAt: "", fileName: "")
-//                }
                 return PublicOwnCellModel(url: gist.url,
                                      userName: gist.owner.login,
                                      avatarURL: photoService.photo(byUrl: gist.owner.avatarUrl) ?? UIImage(),

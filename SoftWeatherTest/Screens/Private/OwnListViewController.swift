@@ -41,7 +41,7 @@ class OwnListViewController: UIViewController {
         self.navigationItem.title = "GitHub Gists"
         ownListView.tableView.delegate = self
         ownListView.tableView.dataSource = self
-        ownListView.tableView.prefetchDataSource = self
+
         ownListView.tableView.register(OwnListCell.self, forCellReuseIdentifier: "ownReuseId")
     }
     
@@ -94,14 +94,3 @@ extension OwnListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension OwnListViewController: UITableViewDataSourcePrefetching {
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        guard let maxRow = indexPaths.map({ $0.row }).max() else { return }
-        
-        if maxRow > viewModel.cellModel.value.count - 2, !isLoading {
-            isLoading = true
-            viewModel.getGistForPrefetching()
-        }
-        isLoading = false
-    }
-}

@@ -64,7 +64,7 @@ final class PublicListViewModel {
                 if self.gists.contains(where: { $0.id == gistJSON.id }) {
                     print(true)
                 } else {
-                    print(gistJSON)
+                    //print(gistJSON)
                     self.gists.append(gistJSON)
                     DispatchQueue.main.async {
                         self.cellModel.value = self.viewModels()
