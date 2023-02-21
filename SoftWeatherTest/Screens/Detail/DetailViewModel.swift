@@ -69,11 +69,11 @@ final class DetailViewModel {
     }
     
     func didSelectFiles(indexPath: IndexPath) {
-//        let fileDetailsViewController = FileDetailsViewController(nibName: "FileDetailsViewController", bundle: nil)
-//        fileDetailsViewController.fileName = "\(files[indexPath.item].filename)"
-//        fileDetailsViewController.contentFile = "\(files[indexPath.item].content ?? "")"
-//        fileDetailsViewController.idGist = "\(gist?.id ?? "")"
-//        viewController?.present(fileDetailsViewController, animated:true)
+        let fileDetailsViewController = FileDetailsViewController(nibName: "FileDetailsViewController", bundle: nil)
+        fileDetailsViewController.fileName = "\(files[indexPath.item].filename)"
+        fileDetailsViewController.contentFile = "\(files[indexPath.item].content ?? "")"
+        fileDetailsViewController.idGist = "\(gist?.id ?? "")"
+        viewController?.present(fileDetailsViewController, animated:true)
     }
     
     func viewModel() -> DetailGistCellModel {

@@ -28,6 +28,10 @@
 		FA475F9529A4D7D600D53719 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F9429A4D7D600D53719 /* DetailViewModel.swift */; };
 		FA475F9729A4D7EF00D53719 /* DetailGistCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F9629A4D7EF00D53719 /* DetailGistCellModel.swift */; };
 		FA475F9929A4D8BB00D53719 /* DetailsGistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA475F9829A4D8BB00D53719 /* DetailsGistViewController.xib */; };
+		FAF621B529A4DD640060EC65 /* FileDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF621B329A4DD640060EC65 /* FileDetailsViewController.xib */; };
+		FAF621B629A4DD640060EC65 /* FileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF621B429A4DD640060EC65 /* FileDetailsViewController.swift */; };
+		FAF621BA29A4DD7B0060EC65 /* CommitsFileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF621B829A4DD7B0060EC65 /* CommitsFileCell.swift */; };
+		FAF621BB29A4DD7B0060EC65 /* CommitsFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF621B929A4DD7B0060EC65 /* CommitsFileCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		FA475F9429A4D7D600D53719 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		FA475F9629A4D7EF00D53719 /* DetailGistCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailGistCellModel.swift; sourceTree = "<group>"; };
 		FA475F9829A4D8BB00D53719 /* DetailsGistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsGistViewController.xib; sourceTree = "<group>"; };
+		FAF621B329A4DD640060EC65 /* FileDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileDetailsViewController.xib; sourceTree = "<group>"; };
+		FAF621B429A4DD640060EC65 /* FileDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDetailsViewController.swift; sourceTree = "<group>"; };
+		FAF621B829A4DD7B0060EC65 /* CommitsFileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitsFileCell.swift; sourceTree = "<group>"; };
+		FAF621B929A4DD7B0060EC65 /* CommitsFileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommitsFileCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +112,7 @@
 			children = (
 				FA475F6B29A4CC1200D53719 /* Main */,
 				FA475F8429A4D52100D53719 /* Detail */,
+				FAF621B229A4DD450060EC65 /* DetailFile */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -192,6 +201,25 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		FAF621B229A4DD450060EC65 /* DetailFile */ = {
+			isa = PBXGroup;
+			children = (
+				FAF621B429A4DD640060EC65 /* FileDetailsViewController.swift */,
+				FAF621B329A4DD640060EC65 /* FileDetailsViewController.xib */,
+				FAF621B729A4DD7B0060EC65 /* Views */,
+			);
+			path = DetailFile;
+			sourceTree = "<group>";
+		};
+		FAF621B729A4DD7B0060EC65 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAF621B829A4DD7B0060EC65 /* CommitsFileCell.swift */,
+				FAF621B929A4DD7B0060EC65 /* CommitsFileCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -254,6 +282,8 @@
 				FA475F9229A4D7B200D53719 /* DetailViewCell.xib in Resources */,
 				FA475F9929A4D8BB00D53719 /* DetailsGistViewController.xib in Resources */,
 				FA475F5E29A4C9A700D53719 /* Assets.xcassets in Resources */,
+				FAF621BB29A4DD7B0060EC65 /* CommitsFileCell.xib in Resources */,
+				FAF621B529A4DD640060EC65 /* FileDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +297,7 @@
 				FA475F8329A4D40400D53719 /* Observable.swift in Sources */,
 				FA475F7429A4CE8F00D53719 /* MainCellModel.swift in Sources */,
 				FA475F8B29A4D58100D53719 /* DetailsGistViewController.swift in Sources */,
+				FAF621BA29A4DD7B0060EC65 /* CommitsFileCell.swift in Sources */,
 				FA475F5929A4C9A500D53719 /* MainViewController.swift in Sources */,
 				FA475F7E29A4D2E800D53719 /* Gist.swift in Sources */,
 				FA475F8029A4D33400D53719 /* GistCommits.swift in Sources */,
@@ -275,6 +306,7 @@
 				FA475F7B29A4D2D400D53719 /* DateFormatter.swift in Sources */,
 				FA475F7029A4CDB400D53719 /* MainCell.swift in Sources */,
 				FA475F5729A4C9A500D53719 /* SceneDelegate.swift in Sources */,
+				FAF621B629A4DD640060EC65 /* FileDetailsViewController.swift in Sources */,
 				FA475F6E29A4CC6600D53719 /* MainView.swift in Sources */,
 				FA475F9729A4D7EF00D53719 /* DetailGistCellModel.swift in Sources */,
 				FA475F9329A4D7B200D53719 /* DetailViewCell.swift in Sources */,
