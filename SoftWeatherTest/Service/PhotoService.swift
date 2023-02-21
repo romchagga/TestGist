@@ -34,7 +34,6 @@ class PhotoService {
     
     func photo(atIndexPath indexPath: IndexPath, byUrl url: String) -> UIImage? {
         var image: UIImage?
-        print(url)
         if let photo = images[url] {
             image = photo
         } else if let photo = getImageFromCache(url: url) {
@@ -47,7 +46,6 @@ class PhotoService {
     
     func photo(byUrl url: String) -> UIImage? {
         var image: UIImage?
-        print(url)
         if let photo = images[url] {
             image = photo
         } else if let photo = getImageFromCache(url: url) {

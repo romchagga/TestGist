@@ -30,7 +30,7 @@ final class MainView: UIView {
     }
     
     private func configureUI() {
-        self.backgroundColor = .green
+        self.backgroundColor = .white
         self.addSubview(tableView)
         self.setupConstraints()
     }

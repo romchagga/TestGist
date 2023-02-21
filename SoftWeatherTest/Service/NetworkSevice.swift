@@ -33,7 +33,6 @@ final class NetworkService {
         guard
             let url = urlConstructor.url
         else { return }
-        print(url)
         let task = mySession.dataTask(with: url) { data, response, error in
             if let response = response as? HTTPURLResponse {
                 print(response.statusCode)
@@ -91,7 +90,6 @@ final class NetworkService {
         guard
             let url = urlConstructor.url
         else { return }
-        print(url)
         let task = mySession.dataTask(with: url) { data, response, error in
             if let response = response as? HTTPURLResponse {
                 print(response.statusCode)

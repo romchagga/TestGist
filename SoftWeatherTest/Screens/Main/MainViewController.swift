@@ -20,20 +20,37 @@ class MainViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = MainView()
+        self.viewModel.viewController = self
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupTableView()
+        setupViews()
+        bindViewModel()
+        
+        viewModel.getGists()
     }
 
+    private func setupViews() {
+        setupTableView()
+        setupRefreshControl()
+    }
+    
     private func setupTableView() {
         self.navigationItem.title = "GitHub Gists"
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         mainView.tableView.prefetchDataSource = self
         mainView.tableView.register(MainCell.self, forCellReuseIdentifier: "reuseId")
+    }
+    
+    private func bindViewModel() {
+        self.viewModel.cellModel.addObserver(self) { [weak self]  (gistJSON, _) in
+            DispatchQueue.main.async {
+                self?.mainView.tableView.reloadData()
+            }
+        }
     }
     
     private func setupRefreshControl() {
@@ -54,10 +71,12 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        viewModel.cellModel.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
+        let currentGist = viewModel.cellModel.value[indexPath.row]
         
         let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: "reuseId", for: indexPath)
         
@@ -65,10 +84,13 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             return dequeuedCell
         }
         
-        cell.textLabel?.text = "123"
-        
+        cell.configure(with: currentGist)
         return cell
-        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentGist = viewModel.cellModel.value[indexPath.row]
+        viewModel.didSelectGist(currentGist)
     }
 }
 

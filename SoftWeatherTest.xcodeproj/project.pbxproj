@@ -22,6 +22,12 @@
 		FA475F7E29A4D2E800D53719 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F7D29A4D2E800D53719 /* Gist.swift */; };
 		FA475F8029A4D33400D53719 /* GistCommits.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F7F29A4D33400D53719 /* GistCommits.swift */; };
 		FA475F8329A4D40400D53719 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F8229A4D40400D53719 /* Observable.swift */; };
+		FA475F8B29A4D58100D53719 /* DetailsGistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F8929A4D58100D53719 /* DetailsGistViewController.swift */; };
+		FA475F9229A4D7B200D53719 /* DetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA475F9029A4D7B100D53719 /* DetailViewCell.xib */; };
+		FA475F9329A4D7B200D53719 /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F9129A4D7B100D53719 /* DetailViewCell.swift */; };
+		FA475F9529A4D7D600D53719 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F9429A4D7D600D53719 /* DetailViewModel.swift */; };
+		FA475F9729A4D7EF00D53719 /* DetailGistCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F9629A4D7EF00D53719 /* DetailGistCellModel.swift */; };
+		FA475F9929A4D8BB00D53719 /* DetailsGistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA475F9829A4D8BB00D53719 /* DetailsGistViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +48,12 @@
 		FA475F7D29A4D2E800D53719 /* Gist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
 		FA475F7F29A4D33400D53719 /* GistCommits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistCommits.swift; sourceTree = "<group>"; };
 		FA475F8229A4D40400D53719 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		FA475F8929A4D58100D53719 /* DetailsGistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsGistViewController.swift; sourceTree = "<group>"; };
+		FA475F9029A4D7B100D53719 /* DetailViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewCell.xib; sourceTree = "<group>"; };
+		FA475F9129A4D7B100D53719 /* DetailViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
+		FA475F9429A4D7D600D53719 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		FA475F9629A4D7EF00D53719 /* DetailGistCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailGistCellModel.swift; sourceTree = "<group>"; };
+		FA475F9829A4D8BB00D53719 /* DetailsGistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsGistViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				FA475F6B29A4CC1200D53719 /* Main */,
+				FA475F8429A4D52100D53719 /* Detail */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -127,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				FA475F7329A4CE8F00D53719 /* MainCellModel.swift */,
+				FA475F9629A4D7EF00D53719 /* DetailGistCellModel.swift */,
 			);
 			path = CellModels;
 			sourceTree = "<group>";
@@ -156,6 +170,26 @@
 				FA475F8229A4D40400D53719 /* Observable.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FA475F8429A4D52100D53719 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				FA475F8929A4D58100D53719 /* DetailsGistViewController.swift */,
+				FA475F9829A4D8BB00D53719 /* DetailsGistViewController.xib */,
+				FA475F9429A4D7D600D53719 /* DetailViewModel.swift */,
+				FA475F8F29A4D7A700D53719 /* Views */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		FA475F8F29A4D7A700D53719 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA475F9129A4D7B100D53719 /* DetailViewCell.swift */,
+				FA475F9029A4D7B100D53719 /* DetailViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +251,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA475F6129A4C9A700D53719 /* LaunchScreen.storyboard in Resources */,
+				FA475F9229A4D7B200D53719 /* DetailViewCell.xib in Resources */,
+				FA475F9929A4D8BB00D53719 /* DetailsGistViewController.xib in Resources */,
 				FA475F5E29A4C9A700D53719 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +266,7 @@
 			files = (
 				FA475F8329A4D40400D53719 /* Observable.swift in Sources */,
 				FA475F7429A4CE8F00D53719 /* MainCellModel.swift in Sources */,
+				FA475F8B29A4D58100D53719 /* DetailsGistViewController.swift in Sources */,
 				FA475F5929A4C9A500D53719 /* MainViewController.swift in Sources */,
 				FA475F7E29A4D2E800D53719 /* Gist.swift in Sources */,
 				FA475F8029A4D33400D53719 /* GistCommits.swift in Sources */,
@@ -239,8 +276,11 @@
 				FA475F7029A4CDB400D53719 /* MainCell.swift in Sources */,
 				FA475F5729A4C9A500D53719 /* SceneDelegate.swift in Sources */,
 				FA475F6E29A4CC6600D53719 /* MainView.swift in Sources */,
+				FA475F9729A4D7EF00D53719 /* DetailGistCellModel.swift in Sources */,
+				FA475F9329A4D7B200D53719 /* DetailViewCell.swift in Sources */,
 				FA475F6929A4CC0400D53719 /* MainViewModel.swift in Sources */,
 				FA475F7729A4D29500D53719 /* NetworkSevice.swift in Sources */,
+				FA475F9529A4D7D600D53719 /* DetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
