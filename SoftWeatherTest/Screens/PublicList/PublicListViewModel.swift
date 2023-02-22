@@ -62,9 +62,7 @@ final class PublicListViewModel {
             guard let self = self else { return }
             gistsJSON.forEach { gistJSON in
                 if self.gists.contains(where: { $0.id == gistJSON.id }) {
-                    print(true)
                 } else {
-                    //print(gistJSON)
                     self.gists.append(gistJSON)
                     DispatchQueue.main.async {
                         self.cellModel.value = self.viewModels()
