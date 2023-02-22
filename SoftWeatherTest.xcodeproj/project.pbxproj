@@ -18,7 +18,6 @@
 		FA475F7429A4CE8F00D53719 /* PublicOwnCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F7329A4CE8F00D53719 /* PublicOwnCellModel.swift */; };
 		FA475F7729A4D29500D53719 /* NetworkSevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F7629A4D29500D53719 /* NetworkSevice.swift */; };
 		FA475F7929A4D2BA00D53719 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F7829A4D2BA00D53719 /* PhotoService.swift */; };
-		FA475F7B29A4D2D400D53719 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F7A29A4D2D400D53719 /* DateFormatter.swift */; };
 		FA475F7E29A4D2E800D53719 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F7D29A4D2E800D53719 /* Gist.swift */; };
 		FA475F8029A4D33400D53719 /* GistCommits.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F7F29A4D33400D53719 /* GistCommits.swift */; };
 		FA475F8329A4D40400D53719 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA475F8229A4D40400D53719 /* Observable.swift */; };
@@ -53,7 +52,6 @@
 		FA475F7329A4CE8F00D53719 /* PublicOwnCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicOwnCellModel.swift; sourceTree = "<group>"; };
 		FA475F7629A4D29500D53719 /* NetworkSevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSevice.swift; sourceTree = "<group>"; };
 		FA475F7829A4D2BA00D53719 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
-		FA475F7A29A4D2D400D53719 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		FA475F7D29A4D2E800D53719 /* Gist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
 		FA475F7F29A4D33400D53719 /* GistCommits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistCommits.swift; sourceTree = "<group>"; };
 		FA475F8229A4D40400D53719 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -171,7 +169,6 @@
 			children = (
 				FA475F7629A4D29500D53719 /* NetworkSevice.swift */,
 				FA475F7829A4D2BA00D53719 /* PhotoService.swift */,
-				FA475F7A29A4D2D400D53719 /* DateFormatter.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -343,7 +340,6 @@
 				FA475F8029A4D33400D53719 /* GistCommits.swift in Sources */,
 				FA475F7929A4D2BA00D53719 /* PhotoService.swift in Sources */,
 				FA475F5529A4C9A500D53719 /* AppDelegate.swift in Sources */,
-				FA475F7B29A4D2D400D53719 /* DateFormatter.swift in Sources */,
 				FAD7C4ED29A4E61E0010A533 /* StartNameViewController.swift in Sources */,
 				FA475F7029A4CDB400D53719 /* PublicListCell.swift in Sources */,
 				FA475F5729A4C9A500D53719 /* SceneDelegate.swift in Sources */,

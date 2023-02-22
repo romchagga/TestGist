@@ -38,7 +38,6 @@ final class PublicListCell: UITableViewCell {
     private(set) lazy var avatarImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(systemName: "person.fill")
         return imageView
     }()
     

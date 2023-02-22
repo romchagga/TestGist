@@ -27,7 +27,8 @@ class StartNameViewController: UIViewController {
     let button: UIButton = {
         let button = UIButton()
         button.setTitle("Перейти", for: .normal)
-        button.backgroundColor = .green
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 10
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         return button
@@ -105,7 +106,8 @@ class StartNameViewController: UIViewController {
         NSLayoutConstraint.activate([
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             button.topAnchor.constraint(equalTo: textFieldName.bottomAnchor, constant: 20),
-            button.widthAnchor.constraint(equalToConstant: 200)
+            button.widthAnchor.constraint(equalToConstant: 200),
+            button.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 

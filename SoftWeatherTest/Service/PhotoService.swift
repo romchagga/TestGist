@@ -32,18 +32,6 @@ class PhotoService {
         return pathName
     }()
     
-    func photo(atIndexPath indexPath: IndexPath, byUrl url: String) -> UIImage? {
-        var image: UIImage?
-        if let photo = images[url] {
-            image = photo
-        } else if let photo = getImageFromCache(url: url) {
-            image = photo
-        } else {
-            loadPhoto(atIndexPath: indexPath, byUrl: url)
-        }
-        return image
-    }
-    
     func photo(byUrl url: String) -> UIImage? {
         var image: UIImage?
         if let photo = images[url] {
@@ -79,29 +67,6 @@ class PhotoService {
         let hashName = url.split(separator: "/").last ?? "default"
         return cachesDirectory.appendingPathComponent(PhotoService.pathName + "/" + hashName).path
     }
-    
-    private func loadPhoto(atIndexPath indexPath: IndexPath, byUrl url: String) {
-    
-        guard let urlSession = URL(string: "\(url)") else { return }
-        let task = self.session.dataTask(with: urlSession, completionHandler: { data, response, error in
-            if let response = response as? HTTPURLResponse {
-                print(response.statusCode)
-                }
-            guard
-                error == nil,
-                let data = data
-            else { return }
-            
-            do {
-               guard let image = UIImage(data: data) else { return }
-                self.saveImageToCache(url: url, image: image)
-                    DispatchQueue.main.async {
-                        self.images[url] = image
-                            }
-                        }
-                    })
-            task.resume()
-            }
     
     private func loadPhoto(byUrl url: String) {
     
