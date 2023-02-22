@@ -37,6 +37,7 @@ final class PublicListCell: UITableViewCell {
     
     private(set) lazy var avatarImage: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()

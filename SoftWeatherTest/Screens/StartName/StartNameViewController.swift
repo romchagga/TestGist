@@ -14,8 +14,9 @@ class StartNameViewController: UIViewController {
     let textFieldName: UITextField = {
         let textfield = UITextField()
         textfield.placeholder = "Введите ваше имя пользователя"
-        textfield.backgroundColor = .lightGray
+        textfield.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
         textfield.translatesAutoresizingMaskIntoConstraints = false
+        textfield.layer.cornerRadius = 10
         let paddingView = UIView(frame: CGRectMake(0, 0, 5, 0))
         textfield.leftView = paddingView
         textfield.leftViewMode = UITextField.ViewMode.always
@@ -100,7 +101,8 @@ class StartNameViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             textFieldName.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            textFieldName.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50)
+            textFieldName.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -60),
+            textFieldName.heightAnchor.constraint(equalToConstant: 35)
         ])
         
         NSLayoutConstraint.activate([

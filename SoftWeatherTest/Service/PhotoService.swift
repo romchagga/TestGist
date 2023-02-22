@@ -81,13 +81,13 @@ class PhotoService {
             else { return }
             
             do {
-               guard let image = UIImage(data: data) else { return }
-            DispatchQueue.main.async {
-                self.images[url] = image
-                    }
-                self.saveImageToCache(url: url, image: image)
+                guard let image = UIImage(data: data) else { return }
+                DispatchQueue.main.async {
+                    self.images[url] = image
                 }
-                    })
+                self.saveImageToCache(url: url, image: image)
+            }
+        })
             task.resume()
             }
     
