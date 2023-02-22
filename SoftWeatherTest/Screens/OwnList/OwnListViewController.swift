@@ -9,7 +9,7 @@ import UIKit
 
 class OwnListViewController: UIViewController {
     
-    private let viewModel = OwnListViewModel()
+    var viewModel = OwnListViewModel()
     
     private var isLoading: Bool = false
     

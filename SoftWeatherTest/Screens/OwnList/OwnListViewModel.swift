@@ -22,10 +22,12 @@ final class OwnListViewModel {
     
     private let networkService = NetworkService()
     
+    var userName = ""
+    
     //MARK: - Methods
     
     func getGistsByUser() {
-        networkService.getGistsByUser(user: "AutoTransform") { [weak self] result in
+        networkService.getGistsByUser(user: userName) { [weak self] result in
             switch result {
             case .success(let gistArray):
                 guard let self = self else { return }

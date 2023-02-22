@@ -8,6 +8,8 @@
 import UIKit
 
 class StartNameViewController: UIViewController {
+    
+    var writtenText = ""
 
     let textFieldName: UITextField = {
         let textfield = UITextField()
@@ -30,11 +32,20 @@ class StartNameViewController: UIViewController {
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         return button
     }()
+    
+    let logoImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "logoImage")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        
+        title = "Github gists"
         
         setConstraint()
         
@@ -44,11 +55,19 @@ class StartNameViewController: UIViewController {
         textFieldName.text = ""
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        textFieldName.resignFirstResponder()
+    }
+    
     @objc func buttonTapped() {
         let tabBar = UITabBarController()
+        let ownListViewController = OwnListViewController()
+        if let text = textFieldName.text {
+            ownListViewController.viewModel.userName = text
+        }
         tabBar.viewControllers = [
         createTabBar(vc: PublicListViewController(), title: "Public", image: "list.dash"),
-        createTabBar(vc: OwnListViewController(), title: "Own", image: "person.fill.turn.down")
+        createTabBar(vc: ownListViewController, title: "Own", image: "person.fill.turn.down")
         
         ]
         navigationController?.pushViewController(tabBar, animated: true)
@@ -64,15 +83,23 @@ class StartNameViewController: UIViewController {
         
         return vc
         
-        
     }
     
     func setConstraint() {
         view.addSubview(textFieldName)
         view.addSubview(button)
+        view.addSubview(logoImage)
+        
+        NSLayoutConstraint.activate([
+            logoImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            logoImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            logoImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            logoImage.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -100)
+        ])
+        
         NSLayoutConstraint.activate([
             textFieldName.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            textFieldName.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            textFieldName.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50)
         ])
         
         NSLayoutConstraint.activate([
