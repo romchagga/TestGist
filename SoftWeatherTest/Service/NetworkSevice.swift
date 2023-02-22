@@ -64,7 +64,7 @@ final class NetworkService {
             guard
                 error == nil,
                 let data = data
-            else { return }
+            else {return}
             do {
                 guard let gistResponse = try? JSONDecoder().decode([Gist].self, from: data)
                 else {

@@ -75,6 +75,7 @@ extension OwnListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentGist = viewModel.cellModel.value[indexPath.row]
         viewModel.didSelectGist(currentGist)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

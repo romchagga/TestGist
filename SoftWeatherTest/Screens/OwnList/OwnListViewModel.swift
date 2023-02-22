@@ -24,8 +24,6 @@ final class OwnListViewModel {
     
     var userName = ""
     
-    //MARK: - Methods
-    
     func getGistsByUser() {
         networkService.getGistsByUser(user: userName) { [weak self] result in
             switch result {
@@ -56,8 +54,8 @@ final class OwnListViewModel {
                                      userName: gist.owner.login,
                                      avatarURL: photoService.photo(byUrl: gist.owner.avatarUrl) ?? UIImage(),
                                      createdAt: gist.createdAt,
-                                          fileName: gist.files.values.first?.filename ?? "",
-                                          description: gist.description)
+                                     fileName: gist.files.values.first?.filename ?? "",
+                                     description: gist.description)
             }
     }
     
